@@ -7,6 +7,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
+/**
+ * Class Controller UI
+ * 
+ * @author Pittayut Sothanakul
+ *
+ */
 public class ConverterController {
 	@FXML
 	TextField textField1;
@@ -21,6 +27,12 @@ public class ConverterController {
 	@FXML
 	ComboBox<Length> comboBox2;
 
+	/**
+	 * Calculate value from textField to another textField.
+	 * 
+	 * @param event
+	 *            calculate when user press enter or clicked on button convert.
+	 */
 	public void handleConvert(ActionEvent event) {
 		String text = textField1.getText().trim();
 		String text2 = textField2.getText().trim();
@@ -58,26 +70,27 @@ public class ConverterController {
 
 	}
 
+	/**
+	 * Clear all textField.
+	 * 
+	 * @param event
+	 *            clear when user clicked clear button.
+	 */
 	public void handleClear(ActionEvent event) {
 		textField1.setText("");
 		textField2.setText("");
 	}
 
-	// @FXML
-	// public void initilize() {
-	// System.out.println("Running initialize");
-	// if (comboBox1 != null) {
-	// comboBox1.getItems().addAll(Length.values());
-	// comboBox1.getSelectionModel().select(0);
-	// }
-	// if (comboBox2 != null) {
-	// comboBox2.getItems().addAll(Length.values());
-	// comboBox2.getSelectionModel().select(1);
-	// }
-	// }
+	/**
+	 * JavaFX calls the initialize() method of your controller when it creates
+	 * the UI form, after the components have been created and @FXML annotated
+	 * attributes have been set.
+	 *
+	 * This is a hook to initialize anything your controller or UI needs.
+	 */
 	@FXML
 	public void initialize() {
-		// This is for testing
+
 		System.out.println("Running initialize");
 		if (comboBox1 != null) {
 			comboBox1.getItems().addAll(Length.values());
